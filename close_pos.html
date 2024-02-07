@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Close Position</title>
+
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        form {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-top: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            color: #333;
+        }
+
+        .input-box {
+            width: 100%;
+            padding: 10px;
+            box-sizing: border-box;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        button {
+            background-color: #4caf50;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <h1>View all positions</h1>
+
+    <form action="fac_pos_page.php" method="post">
+        <!-- This 'View all' button will help the faculty to know about the exact job id which they want to close -->
+        <button type="submit">View all</button>
+    </form>
+
+    <h1>Close Position</h1>
+    <form action="close_pos.php" method="post">
+        <label for="position_id">Position ID:</label>
+        <input type="text" name="position_id" required class="input-box"
+            placeholder="Enter the position id to close, Use the View all button to see open positions">
+
+        <!-- By entering the job id and hitting the 'Close Position' button the faculty gets redirected to the 'fclty_tbl_view' where they can see the updates -->
+        <button type="submit">Close Position</button>
+    </form>
+</body>
+
+</html>

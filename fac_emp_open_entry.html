@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Department Employment Opportunities</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            margin: 20px;
+        }
+
+        h1, h2 {
+            color: #0056b3;
+        }
+
+        form {
+            max-width: 600px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        input[type="text"],
+        input[type="number"],
+        textarea {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 12px;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        select {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 12px;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        button {
+            background-color: #4caf50;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        .centered-div {
+            text-align: center;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Department Employment Opportunities</h1>
+
+    <!-- Form for Posting Positions (Faculty/Staff) -->
+    <h2>Post a Position</h2>
+    <form  action="fac_emp_open_entry.php" method="post">
+        <label>Title: <input type="text" name="title" required></label><br>
+        <label>Job description: <textarea name="job_description" required></textarea></label><br>
+        <label>Department/School: <input type="text" name="department" required></label><br>
+        <label>Required skills: <input type="text" name="required_skills" required></label><br>
+        <label>Hourly rate: <input type="number" name="hourly_rate" step="0.01" required></label><br>
+        <label>Application instructions: <textarea name="application_instructions" required></textarea></label><br>
+        <label>Contact information: <input type="text" name="contact_information" required></label><br>
+        <label for="job_status">Job status:</label>
+        <select name="job_status" >
+            <!-- Simple dropdown for choosing the job status, default value is 'open' -->
+            <option value="open">Open</option>
+            <option value="Close">Close</option>
+        </select>
+        <br><br>
+        <button type="submit">Submit Position</button>
+    </form>
+<!-- To access open positions -->
+    <div class="centered-div">  
+        <h2>View all positions</h2>
+        <form action="close_pos.html" method="post">
+          <button type="submit">Open</button>
+  
+        </form>
+  
+      </div>
+
+</body>
+</html>
