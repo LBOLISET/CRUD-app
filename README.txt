@@ -20,7 +20,3 @@ Here are the step-by-step instructions to set up the web application:
 
 URL: https://in-info-web4.informatics.iupui.edu/~lboliset/APP/login.html
 
-Team Members:
-Lakshmi Mounika Bolisetti
-Oam Chandra Laasya Tummala
-Rakesh Reddy Yennam 
