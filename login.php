@@ -8,7 +8,7 @@ if($_SERVER['REQUEST_METHOD']=="POST"){
   
 
     // Query to check if the provided username and password exist in the users table
-    $query = "SELECT * FROM users WHERE username='$username' AND password='$password'"; 
+    $query = "SELECT * FROM users WHERE username='$username' AND password='$password' AND user_type='$user_type'"; 
     $result = $conn->query($query);
 
     if ($result->num_rows > 0) {
@@ -35,4 +35,3 @@ if($_SERVER['REQUEST_METHOD']=="POST"){
     $conn->close();
 }
 ?>
-
