@@ -6,7 +6,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $position_id = $_POST["position_id"];
 
     // Updating the status to 'closed'
-    $sql = "UPDATE positions SET job_status = 'Closed' WHERE position_id = $position_id";
+    $sql = "UPDATE positions SET job_status = 'Open' WHERE position_id = $position_id";
     $conn->query($sql);
 
     // 

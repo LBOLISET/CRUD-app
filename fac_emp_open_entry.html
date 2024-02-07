@@ -11,6 +11,7 @@
             background-color: #f4f4f4;
             color: #333;
             margin: 20px;
+            position: relative; /* Added */
         }
 
         h1, h2 {
@@ -69,9 +70,20 @@
             text-align: center;
             margin-top: 20px;
         }
+
+        .logout-btn {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+        }
     </style>
 </head>
 <body>
+    <!-- Logout Button -->
+    <form action="login.html" method="post" class="logout-btn">
+        <button type="submit">Logout</button>
+    </form>
+
     <h1>Department Employment Opportunities</h1>
 
     <!-- Form for Posting Positions (Faculty/Staff) -->

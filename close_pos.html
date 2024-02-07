@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Close Position</title>
+    <title>Manage Positions</title>
 
     <style>
         body {
@@ -22,12 +22,20 @@
             color: #333;
         }
 
+        .container {
+            display: flex;
+            justify-content: space-around;
+            width: 100%;
+        }
+
         form {
             background-color: #fff;
             padding: 20px;
             border-radius: 8px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
             margin-top: 20px;
+            margin-bottom: 20px;
+            width: 45%;
         }
 
         label {
@@ -53,10 +61,16 @@
             border-radius: 4px;
             cursor: pointer;
             font-size: 16px;
+            margin-right: 10px;
         }
 
         button:hover {
             background-color: #45a049;
+        }
+
+        .centered {
+            text-align: center;
+            margin-top: 20px;
         }
     </style>
 
@@ -64,22 +78,40 @@
 
 <body>
 
-    <h1>View all positions</h1>
+    <h1>Manage Positions</h1>
 
-    <form action="fac_pos_page.php" method="post">
+    <form action="fac_pos_page.php" method="post" class="centered">
         <!-- This 'View all' button will help the faculty to know about the exact job id which they want to close -->
         <button type="submit">View all</button>
     </form>
 
-    <h1>Close Position</h1>
-    <form action="close_pos.php" method="post">
-        <label for="position_id">Position ID:</label>
-        <input type="text" name="position_id" required class="input-box"
-            placeholder="Enter the position id to close, Use the View all button to see open positions">
+    <div class="container">
+        <!-- Close Position Form -->
+        <form action="close_pos.php" method="post">
+            <h2>Close Position</h2>
+            <label for="position_id_close">Position ID to Close:</label>
+            <input type="text" name="position_id" required class="input-box"
+                placeholder="Enter the position id to close">
+            <!-- Submit to close position -->
+            <button type="submit">Close Position</button>
+        </form>
 
-        <!-- By entering the job id and hitting the 'Close Position' button the faculty gets redirected to the 'fclty_tbl_view' where they can see the updates -->
-        <button type="submit">Close Position</button>
+        <!-- Open Position Form -->
+        <form action="open_pos.php" method="post">
+            <h2>Open Position</h2>
+            <label for="position_id_open">Position ID to Open:</label>
+            <input type="text" name="position_id" required class="input-box"
+                placeholder="Enter the position id to open">
+            <!-- Submit to open position -->
+            <button type="submit">Open Position</button>
+        </form>
+    </div>
+
+    <!-- Logout Form -->
+    <form action="login.html" method="post" class="centered">
+        <button type="submit">Logout</button>
     </form>
+
 </body>
 
 </html>
